@@ -16,13 +16,23 @@ from math import sqrt
 
 #===========================================================================
 # DATA
-# Note: this is only example data, and should be substitued with your own
+# ----------------------------------
+# Notes:
+#     This is only example data, and should be substitued with your own
 #===========================================================================
 x = arange(0,9) 
 y = [int(20*random.random()) for i in range(len(x))]
 
 #===========================================================================
 # LINEAR REGRESSION
+# ----------------------------------
+# Notes:
+#     alpha = the slope of the curve
+#     beta = the point at which the slope intercepts at x = 0
+#     r_value = the correlation coefficient
+#     p_value = the p-value which the h0 hypothesis is tested against
+#         In this case, a p-value of 0.0 would be a 100% match, indicating that the linear regression is perfectly aligned with the data points
+#     std_err = the standard deviation
 #===========================================================================
 alpha, beta, r_value, p_value, std_err = stats.linregress(x, y) # Use scipy to calculate the variables of the least squares fit
 polynomial = poly1d([alpha, beta]) # Calculate the polynomial least squares fit as: "y = ax * b"
